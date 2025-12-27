@@ -4,161 +4,91 @@
   <img src="logo.png" alt="VideoMind AI Logo" width="200"/>
 </div>
 
-Uma solução avançada de automação para criação de conteúdo em vídeo para YouTube Shorts utilizando Inteligência Artificial
+An advanced automation solution for creating YouTube Shorts video content using Artificial Intelligence.
 
-## Sobre o Projeto
+## About the Project
 
-VideoMind AI é uma ferramenta de automação desenvolvida em Node.js que revoluciona o processo de criação de conteúdo para YouTube Shorts. Através da integração de tecnologias de ponta em IA, o sistema automatiza todo o pipeline de produção, desde a geração do roteiro até a publicação do vídeo.
+VideoMind AI is an automation tool developed in Node.js that revolutionizes the content creation process for YouTube Shorts. Through the integration of cutting-edge AI technologies, the system automates the entire production pipeline, from script generation to video publishing.
 
-Artigo detalhado sobre o projeto: [Automatizando a Geração de Conteúdo no YouTube com Inteligência Artificial e Programação](https://medium.com/@thiagobergamig/automatizando-a-gera%C3%A7%C3%A3o-de-conte%C3%BAdo-no-youtube-com-intelig%C3%AAncia-artificial-e-programa%C3%A7%C3%A3o-f50f095d0e70)
+Detailed article about the project: [Automating Content Generation on YouTube with Artificial Intelligence and Programming](https://medium.com/@thiagobergamig/automatizando-a-gera%C3%A7%C3%A3o-de-conte%C3%BAdo-no-youtube-com-intelig%C3%AAncia-artificial-e-programa%C3%A7%C3%A3o-f50f095d0e70)
 
-## Funcionalidades Principais
+## Key Features
 
-### 1. Geração Automatizada de Roteiros
-- Utilização do ChatGPT-4 para criação de roteiros otimizados
-- Análise contextual para garantir relevância do conteúdo
-- Adaptação automática para o formato de Shorts
+### 1. Automated Script Generation
+- Utilization of ChatGPT-4 for creating optimized scripts
+- Contextual analysis to ensure content relevance
+- Automatic adaptation for the Shorts format
 
-### 2. Síntese Avançada de Voz
-- Integração com Google Cloud Text-to-Speech
-- Suporte a múltiplos idiomas e sotaques
-- Controle de entonação e velocidade da fala
-- Processamento de áudio em alta qualidade
+### 2. Advanced Voice Synthesis
+- Integration with Google Cloud Text-to-Speech
+- Support for multiple languages and accents
+- Control over intonation and speech rate
+- High-quality audio processing
 
-### 3. Processamento Profissional de Vídeo
-- Edição automatizada utilizando FFmpeg
-- Sistema robusto de composição de cenas
-- Suporte a múltiplos formatos de entrada
-- Otimização para formato vertical (9:16)
-- Controle preciso de qualidade e compressão
+### 3. Professional Video Processing
+- Automated editing using FFmpeg
+- Robust scene composition system
+- Support for multiple input formats
+- Optimization for vertical format (9:16)
+- Precise control over quality and compression
 
-### 4. Sistema de Legendagem
-- Geração automática de legendas via CapCut
-- Sincronização precisa com o áudio
-- Estilos personalizáveis de legendas
-- Suporte a múltiplos idiomas
+### 4. Captioning System
+- Automatic caption generation via CapCut
+- Precise synchronization with audio
+- Customizable caption styles
+- Support for multiple languages
 
-### 5. Otimização para SEO
-- Geração inteligente de descrições com ChatGPT-4
-- Análise de tendências para keywords
-- Otimização de títulos e tags
-- Conformidade com boas práticas do YouTube
+### 5. SEO Optimization
+- Intelligent description generation with ChatGPT-4
+- Trend analysis for keywords
+- Optimization of titles and tags
+- Compliance with YouTube best practices
 
-## Requisitos do Sistema
+## System Requirements
 
 ### Software
-- Node.js 16.x ou superior
-- FFmpeg 4.x ou superior
-- CapCut (última versão)
-- Conta ativa no Google Cloud Platform
-- Acesso à API do ChatGPT-4
+- Node.js 16.x or higher
+- FFmpeg 4.x or higher
+- CapCut (latest version)
+- Active Google Cloud Platform account
+- Access to the ChatGPT-4 API
 
-### Hardware Recomendado
-- Processador: Intel i5/AMD Ryzen 5 ou superior
-- Memória RAM: 8GB mínimo (16GB recomendado)
-- Armazenamento: SSD com 256GB de espaço livre
-- Conexão de Internet: 10Mbps ou superior
+### Recommended Hardware
+- Processor: Intel i5/AMD Ryzen 5 or higher
+- RAM Memory: 8GB minimum (16GB recommended)
+- Storage: SSD with 256GB of free space
+- Internet Connection: 10Mbps or higher
 
-## Estrutura do Projeto
+## Project Structure
 
-```
+
 src/
 ├── audio/
-│   └── audio.js         # Processamento de áudio
+│   └── audio.js         # Audio processing
 ├── chatGPT/
-│   ├── chatGPT.js      # Integração com ChatGPT
-│   └── longText.js      # Processamento de texto longo
+│   ├── chatGPT.js      # ChatGPT integration
+│   └── longText.js      # Long text processing
 ├── video/
-│   ├── cropVideo.js     # Recorte de vídeo
-│   ├── editVideo.js     # Edição principal
-│   └── joinVideo.js     # Composição final
-└── index.js             # Ponto de entrada
-```
+│   ├── cropVideo.js     # Video cropping
+│   ├── editVideo.js     # Main editing
+│   └── joinVideo.js     # Final composition
+└── index.js             # Entry point
 
-## Instalação
 
-1. Clone o repositório:
-```bash
+## Installation
+
+1. Clone the repository:
+bash
 git clone https://github.com/seu-usuario/videomind-ai.git
 cd videomind-ai
-```
 
-2. Instale as dependências:
-```bash
+
+2. Install dependencies:
+bash
 npm install
-```
 
-3. Configure as variáveis de ambiente:
-```bash
+
+3. Configure environment variables:
+bash
 cp .env.example .env
-# Edite o arquivo .env com suas credenciais
-```
-
-4. Configure o Google Cloud:
-- Crie um projeto no Google Cloud Console
-- Ative a API do Text-to-Speech
-- Baixe e configure as credenciais de serviço
-
-## Guia de Uso
-
-1. Preparação do ambiente:
-```bash
-npm run setup
-```
-
-2. Geração de roteiro:
-```bash
-node src/chatGPT/chatGPT.js --prompt="seu-prompt-aqui"
-```
-
-3. Criação do áudio:
-```bash
-node src/audio/audio.js --input="roteiro.txt"
-```
-
-4. Processamento do vídeo:
-```bash
-node src/video/editVideo.js --input="video.mp4"
-```
-
-## Troubleshooting
-
-### Problemas Comuns
-
-1. **Erro na síntese de voz**
-   - Verifique as credenciais do Google Cloud
-   - Confirme a cota disponível de requisições
-   - Valide o formato do texto de entrada
-
-2. **Falha no processamento de vídeo**
-   - Verifique a instalação do FFmpeg
-   - Confirme o espaço em disco disponível
-   - Valide o formato do vídeo de entrada
-
-3. **Erro na geração de legendas**
-   - Atualize o CapCut para a última versão
-   - Verifique a compatibilidade do formato de áudio
-   - Confirme as permissões de acesso
-
-## Contribuindo
-
-1. Fork o projeto
-2. Crie sua Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a Branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-## Suporte
-
-Para suporte e dúvidas, abra uma issue no repositório do GitHub.
-
-## Reconhecimentos
-
-- ChatGPT-4 pela geração de conteúdo inteligente
-- Google Cloud pela infraestrutura de Text-to-Speech
-- FFmpeg pelo processamento robusto de mídia
-- CapCut pelas ferramentas de legendagem
+# Edit the .env file with your credentials
